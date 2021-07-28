@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note_name">
+        <item>Название 1</item>
+        <item>Название 2</item>
+        <item>Название 3</item>
+        <item>Название 4</item>
+        <item>Название 5</item>
+    </string-array>
+    <string-array name="note_body">
+        <item>Описание заметки 1</item>
+        <item>Описание заметки 2</item>
+        <item>Описание заметки 3</item>
+        <item>Описание заметки 4</item>
+        <item>Описание заметки 5</item>
+
+    </string-array>
+</resources>
