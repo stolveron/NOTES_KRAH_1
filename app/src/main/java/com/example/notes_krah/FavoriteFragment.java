@@ -18,8 +18,6 @@ public class FavoriteFragment extends Fragment {
     public static final String ARG_NOTE = "note";
     private Note note;
 
-    // Фабричный метод создания фрагмента
-    // Фрагменты рекомендуется создавать через фабричные методы.
     public static FavoriteFragment newInstance(Note note) {
         FavoriteFragment f = new FavoriteFragment();    // создание
 
@@ -41,17 +39,16 @@ public class FavoriteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Таким способом можно получить головной элемент из макета
+
         View view = inflater.inflate(R.layout.fragment_favorite, container, false);
 
-        //теперь найдем и будем работать с нужними нам элементами
         EditText editTextViewName = view.findViewById(R.id.EditTextViewName);
         EditText editTextViewBody = view.findViewById(R.id.EditTextViewBody);
         TextView textViewDate = view.findViewById(R.id.textViewDate);
         DatePicker datePicker = view.findViewById(R.id.datePicker);
         editTextViewName.setText(note.getNoteName(getContext()));
         editTextViewBody.setText(note.getNoteBody(getContext()));
-        // по хорошему нужно вот так запивать textViewDate.setText(new StringBuilder().append(note.getNoteDateYear(getContext())).append(" ").append(note.getNoteDateMonth(getContext())).append(" ").append(note.getNoteDateDay(getContext())).toString());
+
         textViewDate.setText(note.getNoteDateYear(getContext())+" "+ note.getNoteDateMonth(getContext())+" "+ note.getNoteDateDay(getContext()));
         datePicker.init(note.getNoteDateYear(getContext()), note.getNoteDateMonth(getContext()), note.getNoteDateDay(getContext()), new DatePicker.OnDateChangedListener() {
             @Override

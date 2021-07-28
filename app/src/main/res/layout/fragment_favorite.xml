@@ -10,21 +10,21 @@
         android:id="@+id/EditTextViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="текст заметки"
+        android:text="@string/rt_1"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/EditTextViewBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="описание"
+        android:text="@string/rt_2"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="дата"
+        android:text="@string/rt_3"
         android:textSize="20sp" />
 
     <DatePicker

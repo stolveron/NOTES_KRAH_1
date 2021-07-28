@@ -18,7 +18,7 @@
     <ImageView
         android:layout_width="59dp"
         android:layout_height="79dp"
-        android:src="@drawable/bub" />
+        android:src="@drawable/nag" />
 
     <TextView
         android:layout_width="wrap_content"

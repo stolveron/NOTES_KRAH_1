@@ -8,19 +8,19 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/action_main"
-        android:icon="@android:drawable/ic_menu_compass"
+        android:icon="@drawable/ic_baseline_home_24"
         android:orderInCategory="10"
         android:title="@string/main"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/action_info"
         android:icon="@android:drawable/btn_star_big_on"
         android:orderInCategory="20"
         android:title="@string/favorite"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/ic_baseline_search_24"
         android:orderInCategory="5"
         android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"

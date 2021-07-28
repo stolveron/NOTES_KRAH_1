@@ -19,21 +19,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="back" />
+            android:text="@string/nt_1" />
 
         <Button
             android:id="@+id/buttonMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Список" />
+            android:text="@string/nt_2" />
 
         <Button
             android:id="@+id/buttonFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Открыть" />
+            android:text="@string/nt_3" />
 
 
     </LinearLayout>

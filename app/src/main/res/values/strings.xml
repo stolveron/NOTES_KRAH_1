@@ -9,7 +9,7 @@
     <string name="main_screen">Main screen</string>
     <string name="favorite_screen">Favorite screen</string>
     <string name="settings">Settings</string>
-    <string name="favorite">Favorite</string>
+    <string name="favorite">Info</string>
     <string name="main">Main</string>
     <string name="back">Back</string>
     <string name="search">search</string>
@@ -18,5 +18,13 @@
     <string name="new_menu_item_added">Menu item added</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="tut">ДЯДЯ ВАСЯ</string>
+    <string name="tut">ТЁТЯ НАДЯ</string>
+    <string name="nt_1">Назад</string>
+    <string name="nt_2">Список</string>
+    <string name="nt_3">Открыть</string>
+    <string name="rt_1">текст заметки</string>
+    <string name="rt_2">описание</string>
+    <string name="rt_3">дата</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

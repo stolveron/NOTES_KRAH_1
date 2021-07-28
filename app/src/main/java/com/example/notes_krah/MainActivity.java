@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         initButtonMain();
         initButtonFavorite();
         initButtonBack();
+
     }
 
     // регистрация drawer
@@ -100,9 +103,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_main:
                 addFragment(new MainFragment());
                 return true;
-            case R.id.action_favorite:
-                addFragment(new FavoriteFragment());
-                return true;
+            case R.id.action_info:
+                infoAlert();
         }
         return false;
     }
@@ -114,14 +116,13 @@ public class MainActivity extends AppCompatActivity {
         MenuItem search = menu.findItem(R.id.action_search); // поиск пункта меню поиска
         SearchView searchText = (SearchView) search.getActionView(); // строка поиска
         searchText.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            // реагирует на конец ввода поиска
+
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(MainActivity.this, query, Toast.LENGTH_SHORT).show();
                 return true;
             }
 
-            // реагирует на нажатие каждой клавиши
             @Override
             public boolean onQueryTextChange(String newText) {
                 return true;
@@ -176,6 +177,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void infoAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Информация")
+                .setMessage("бла бла бла ")
+                .setIcon(R.drawable.ic_info)
+                .setPositiveButton("Ок", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     private Fragment getVisibleFragment(FragmentManager fragmentManager) {
         List<Fragment> fragments = fragmentManager.getFragments();
         int countFragments = fragments.size();
@@ -210,12 +226,10 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.replace(R.id.fragment_container, fragment);
         }
 
-        // Добавить транзакцию в бакстек
         if (Settings.IsBackStack) {
             fragmentTransaction.addToBackStack(null);
         }
 
-        // Закрыть транзакцию
         fragmentTransaction.commit();
     }
 
@@ -223,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
     private void readSettings() {
         // Специальный класс для хранения настроек
         SharedPreferences sharedPref = getSharedPreferences(Settings.SHARED_PREFERENCE_NAME, MODE_PRIVATE);
-        // Считываем значения настроек
+
         Settings.IsBackStack = sharedPref.getBoolean(Settings.IS_BACK_STACK_USED, false);
         Settings.IsAddFragment = sharedPref.getBoolean(Settings.IS_ADD_FRAGMENT_USED, true);
         Settings.IsBackAsRemove = sharedPref.getBoolean(Settings.IS_BACK_AS_REMOVE_FRAGMENT, true);

@@ -1,6 +1,7 @@
 package com.example.notes_krah;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -55,6 +56,7 @@ public class MainFragment extends Fragment {
                     //, getResources().getStringArray(R.array.note_name)[fi]
                     ((MainActivity)getActivity()).currentNote = new Note(fi);
                     showNoteDescription(((MainActivity)getActivity()).currentNote);
+                    tv.setTextColor(Color.BLUE);
                 }
             });
         }
@@ -129,6 +131,6 @@ public class MainFragment extends Fragment {
     }
 
     private void showPortNoteDescription(Note currentNote) {
-        Toast.makeText(getActivity()," Выбрана заметка "+currentNote.getNoteName(getActivity()),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity()," Выбрана заметка # "+currentNote.getNoteName(getActivity()) + " #",Toast.LENGTH_SHORT).show();
     }
 }
